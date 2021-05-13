@@ -15,7 +15,7 @@ def _find_mystem(exe):
         if os.path.isfile(fpath) and os.access(fpath, os.X_OK):
             return dir, fpath
 
-    dir = os.path.expanduser("~/.local/bin")
+    dir = os.getenv("MYSTEM3_PATH", None) # os.path.expanduser("~/.local/bin")
     fpath = os.path.join(dir, exe)
 
     return dir, fpath
